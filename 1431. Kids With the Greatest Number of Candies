@@ -1,0 +1,11 @@
+class Solution {
+  List<bool> kidsWithCandies(List<int> candies, int extraCandies) {
+    // Find the maximum number of candies any kid currently has
+    int maxCandies = candies.reduce((curr, next) => curr > next ? curr : next);
+    
+    // Determine which kids could have the greatest number of candies
+    List<bool> result = candies.map((candy) => candy + extraCandies >= maxCandies).toList();
+    
+    return result;
+  }
+}
