@@ -1,0 +1,33 @@
+class Solution {
+ bool canPlaceFlowers(List<int> flowerbed, int n) {
+
+//counter
+int count =0;
+// loop check the current plot can be planted ? current , before , after
+for (int i=0;i< flowerbed.length ;i++)
+{
+
+if(
+    flowerbed[i]==0 && // current
+    (i==0 || flowerbed[i-1]==0) && // before
+ (i==flowerbed.length-1 || flowerbed[i+1]==0)  // after
+){
+flowerbed[i]=1;
+count++;
+}
+
+
+
+}
+
+
+// checker can all n flowers can be planted on all plots
+
+if (count>=n)
+return true;
+
+
+return count >= n;
+} 
+
+}
