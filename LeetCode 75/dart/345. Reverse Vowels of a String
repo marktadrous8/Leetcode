@@ -1,0 +1,57 @@
+class Solution {
+ String reverseVowels(String s) {
+//   Set vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'};
+//   List<int> vowelPositions = [];
+//   List<String> vowelChars = [];
+
+//   // Step 1: Identify and collect vowels
+//   for (int i = 0; i < s.length; i++) {
+//     if (vowels.contains(s[i])) {
+//       vowelPositions.add(i);
+//       vowelChars.add(s[i]);
+//     }
+//   }
+
+//   // Step 2: Reverse the list of vowels
+//   vowelChars = vowelChars.reversed.toList();
+
+//   // Step 3: Replace the vowels in the original string
+//   List<String> chars = s.split('');
+//   for (int i = 0; i < vowelPositions.length; i++) {
+//     chars[vowelPositions[i]] = vowelChars[i];
+//   }
+
+//   return chars.join('');
+
+//set the vowels 
+
+Set vowels = {"a","A","e","E","o","O", "I","i","u","U"};
+//vowels postions 
+List<int> vowelPositions = [];
+// vowels values
+List<String> vowelChars = [];
+
+// for collect vowels 
+for (int i = 0; i < s.length; i++) 
+{
+if(vowels.contains(s[i]))
+{
+vowelPositions.add(i);
+    vowelChars.add(s[i]);
+}
+
+// reverse the list of vowels .toList();
+ 
+}
+  vowelChars = vowelChars.reversed.toList();
+List<String> chars = s.split('');
+//replece vowels with originial  
+ for (int i = 0; i < vowelPositions.length; i++) {
+   chars[vowelPositions[i]] = vowelChars[i];
+  }
+
+  return chars.join('');
+
+
+}
+}
