@@ -1,0 +1,12 @@
+class Solution {
+ String reverseWords(String s) {
+  // Split the string by spaces, which will automatically skip over any extra spaces
+  List<String> words = s.split(' ').where((word) => word.isNotEmpty).toList();
+  
+  // Reverse the list of words
+  List<String> reversedWords = words.reversed.toList();
+  
+  // Join the words with a single space
+  return reversedWords.join(' ');
+}
+}
