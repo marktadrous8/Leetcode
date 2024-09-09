@@ -1,0 +1,19 @@
+class Solution {
+  bool increasingTriplet(List<int> nums) {
+    int small = 2147483647; // Use the maximum value of a 32-bit integer
+    int mid = 2147483647;
+
+    for (int num in nums) {
+      if (num <= small) {
+        small = num; // update small if current number is smaller
+      } else if (num <= mid) {
+        mid = num; // update mid if current number is smaller than mid but greater than small
+      } else {
+        // if we find a number greater than both small and mid, we found our triplet
+        return true;
+      }
+    }
+
+    return false; // return false if no such triplet is found
+  }
+}
