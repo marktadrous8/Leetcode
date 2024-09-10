@@ -1,0 +1,33 @@
+class Solution {
+ int compress(List<String> chars) {
+  int n = chars.length;
+  if (n == 1) return 1;  // If there's only one character, it remains uncompressed
+
+  int writeIndex = 0;  // This is where we write the next character or count
+  int readIndex = 0;  // Pointer to read through chars
+  
+  while (readIndex < n) {
+    String currentChar = chars[readIndex];
+    int count = 0;
+
+    // Count the number of consecutive characters
+    while (readIndex < n && chars[readIndex] == currentChar) {
+      count++;
+      readIndex++;
+    }
+
+    // Write the character to the array
+    chars[writeIndex++] = currentChar;
+
+    // If count is more than 1, we need to write the count to the array
+    if (count > 1) {
+      for (var c in count.toString().split('')) {
+        chars[writeIndex++] = c;
+      }
+    }
+  }
+
+  return writeIndex;  // This is the new length of the array
+}
+
+}
