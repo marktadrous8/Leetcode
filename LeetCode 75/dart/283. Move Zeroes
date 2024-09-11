@@ -1,0 +1,17 @@
+class Solution {
+ void moveZeroes(List<int> nums) {
+  int insertPos = 0; // This will track the position to insert the non-zero number.
+  
+  // First pass to move all non-zero numbers to the beginning.
+  for (int num in nums) {
+    if (num != 0) {
+      nums[insertPos++] = num;
+    }
+  }
+  
+  // Fill remaining elements in the array with 0s.
+  while (insertPos < nums.length) {
+    nums[insertPos++] = 0;
+  }
+}
+}
